@@ -1,0 +1,9 @@
+flask
+gunicorn
+opencv-python
+cmake
+dlib
+face_recognition
+pillow
+mysql
+mysql-connector-python

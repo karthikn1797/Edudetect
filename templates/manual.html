@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+<style>
+    @charset "UTF-8";
+    @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,600);
+
+    body {
+        font-family:fantasy,serif;
+        font-size: 20px;
+        color:#f05d23;
+        background-color:#161925;
+        background-image: url("istockphoto-1068336304-170667a.jpeg");
+        background-size: cover;
+    }
+
+    h1 {
+        margin-top: 0.75em;
+        font-size: 80px;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+
+    .btn-outline-primary{
+        transition-duration: 0.4s;
+        margin-top: 3em;
+        background: #007bff;
+        border: none;
+        border-radius: 4px;
+        color: rgb(255, 255, 255);
+        padding: 20px 20px;
+        width: 250px;
+        outline: none;
+        cursor: pointer;
+        
+    }
+    .btn-outline-primary:hover{
+        background-color: #383232; /* Green */
+        color: white;
+    }
+
+
+
+    .icons {
+        font-size: 50px;
+
+    }
+
+    .icon {
+        
+        display: inline-block;
+        width: 80px;
+        height: 100px;
+        border-radius: 4px 6px 4px 4px;
+        cursor: pointer;
+        position: relative;
+        margin: 0 5px;
+    }
+
+    .icon:after {
+        content: "";
+        position: absolute;
+        display: block;
+        top: 0;
+        right: 0;
+        width: 15px;
+        height: 15px;
+        border-radius: 0 2px;
+        transition: all 0.2s linear;
+        backface-visibility: hidden;
+    }
+
+    .icon--doc {
+        background-color: #486189;
+    }
+
+    .icon--doc:after {
+        background: linear-gradient(45deg, #182945 50%, rgb(126, 108, 108) 50%);
+    }
+
+    .icon--doc i:before {
+        content: "☰";
+    }
+
+    .icon i {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: block;
+        font-size: 10px;
+        color: rgb(32, 25, 25);
+        font-weight: 500;
+        max-width: 80%;
+    }
+
+    .icon i:before,
+    .icon i:after {
+        display: block;
+        transition: all 0.2s linear;
+    }
+
+    .icon i:before {
+        text-align: center;
+        font-size: 12px;
+    }
+
+    .icon i:after {
+        content: attr(title);
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
+    .fileupload-wrapper {
+        padding: 100px;
+    }
+
+    .card-body-upload {
+        border: 2px dashed rgb(134, 135, 139);
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        padding: 30px 30px 40px;
+        position: relative;
+    }
+
+    /* .card-mask {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.45);
+  border-radius: 8px;
+} */
+    .card-text-upload {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: xx-large;
+        text-align: center;
+        color: #ffffff;
+    }
+
+    .card-text-upload svg {
+        width: 80px;
+    }
+
+    .card-text-upload svg path {
+        fill:rgb(255, 255, 255);
+    }
+
+    .card-text-upload .txt-card {
+        margin-bottom: 30px;
+    }
+
+    .card-text-upload .txt-card .or {
+        color: rgb(233, 233, 233);
+        font-size: large;
+    }
+
+    .card-text-upload input[type=file] {
+        display: contents;
+    }
+
+    .card-text-upload button {
+        background: #007bff;
+        border: none;
+        border-radius: 4px;
+        color: rgb(255, 255, 255);
+        padding: 20px 20px;
+        width: 250px;
+        outline: none;
+        cursor: pointer;
+    }
+
+
+    .card-text-upload button:hover {
+        background: #496788;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="d-flex align-items-center justify-content-between">
+            <h1>EDU DETECT</h1>
+            <style>
+                body{
+                    background-image: url("assets/istockphoto-1068336304-170667a.jpeg");
+                    opacity: inherit;
+                    background-size:cover;
+                }
+            </style>
+            <a class="btn btn-outline-primary" href="/auto">Turn On Webcam</a>
+            <a class="btn btn-outline-primary" href="/viewAttendance">View Attendence</a>
+        </div>
+        <div class="icons"></div>
+        <div class="fileupload-wrapper">
+            <div class="card-body-upload">
+                <div class="card-mask"></div>
+                <div class="card-text-upload">
+                    <div class="txt-card">
+                        <svg viewBox="0 0 612 612">
+                            <g>
+                                <path
+                                    d="M0,389.581C0,444.8,41.338,490.616,95.639,499.462l19.139,1.529h382.5l19.14-1.529C570.662,490.616,612,444.8,612,389.581   c0-48.516-31.936-89.798-76.527-105.098c-1.614-96.084-82.343-173.474-181.653-173.474c-71.632,0-133.583,40.253-163.181,98.755   c-13.993-15.022-34.244-24.48-56.777-24.48c-42.256,0-76.5,33.271-76.5,74.274c0,10.71,2.336,20.892,6.509,30.099   C26.038,307.851,0,345.767,0,389.581z M306,250.1l111.272,125.183h-55.998v125.182h-111.05V375.282h-55.498L306,250.1z">
+                                </path>
+                            </g>
+                        </svg>
+                        <div>Drag and Drop an Image here to Start Recognition</div>
+                        <div class="or">OR</div>
+                    </div>
+                    <input type="file" id="input-file" name="image">
+                    <button class="browse">Browse</button>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div id="output" class="d-flex justify-content-around"></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $(document).ready(function () {
+            $(".browse").on("click", function () {
+                $(this).prev().click();
+            });
+            $("#input-file").change(function (e) {
+                for (var i = 0; i < e.target.files.length; i++) {
+                    $(".icons").append(
+                        '<div class="icon icon--doc"><i title="' +
+                        e.target.files[i].name.split(".")[1] +
+                        '"></i></div>'
+                    );
+                }
+                var fd = new FormData();
+                var files = e.target.files;
+                console.log(files);
+
+                // Check file selected or not
+                if (files.length > 0) {
+                    fd.append('file', files[0]);
+                    fd.append('_token', $('[name="csrf-token"]').attr('content'));
+
+                    $.ajax({
+                        url: '/recognize',
+                        type: 'POST',
+                        data: fd,
+                        contentType: false,
+                        processData: false,
+                        success: function (response) {
+                            if (response != 0) {
+                                // location.reload();
+                                alert(response);
+                            } else {
+                                alert('file not uploaded');
+                            }
+                        },
+                    });
+                } else {
+                    alert("Please select a file.");
+                }
+            });
+            $(".card-body-upload").on("dragover", function (e) {
+                $(this).css("border-color", "#333");
+                e.preventDefault();
+            });
+            $(".card-body-upload").on("dragleave", function (e) {
+                $(this).removeAttr("style");
+                e.preventDefault();
+            });
+            $(".card-body-upload").on("drop", function (e) {
+                for (var i = 0; i < e.originalEvent.dataTransfer.files.length; i++) {
+                    $(".icons").append(
+                        '<div class="icon icon--doc"><i title="' +
+                        e.originalEvent.dataTransfer.files[i].name.split(".")[1] +
+                        '"></i></div>'
+                    );
+                }
+                $(this).removeAttr("style");
+                e.preventDefault();
+
+                var fd = new FormData();
+                var files = e.originalEvent.dataTransfer.files;
+                console.log(files);
+
+                // Check file selected or not
+                if (files.length > 0) {
+                    fd.append('file', files[0]);
+                    //fd.append('_token', $('[name="csrf-token"]').attr('content'));
+
+                    $.ajax({
+                        url: '/recognize',
+                        type: 'POST',
+                        data: fd,
+                        contentType: false,
+                        processData: false,
+                        success: function (response) {
+                            if (response != 0) {
+                                // split respinse on ,
+                                // var res = JSON.parse(response).split(',');
+                                var html_data = "";
+                                response.forEach(name => {
+                                    html_data+= `
+                                    <div class="card" style="width: 18rem;">
+                                        <div class="card-body">
+                                            <h5 class="card-title">${name}</h5>
+                                        </div>
+                                      </div>
+                                    `;
+                                });
+                                // alert(response);
+                                $('#output').html(html_data);
+                            } else {
+                                alert('file not uploaded');
+                            }
+                        },
+                    });
+                } else {
+                    alert("Please select file to upload.");
+                }
+            });
+        });
+    </script>
+</body>
+</html>}

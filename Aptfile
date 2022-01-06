@@ -1,0 +1,12 @@
+# you can list packages
+build-essential
+gcc
+g++
+pkg-config
+libopencv-dev
+ffmpeg
+libsm6
+libxext6
+libxrender1
+libfontconfig1
+libice6
