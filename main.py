@@ -13,13 +13,18 @@ archana_face_encoding = face_recognition.face_encodings(archana_image)[0]
 rohan_image = face_recognition.load_image_file("static/training_images/rohan/rohan.jpg")
 rohan_face_encoding = face_recognition.face_encodings(rohan_image)[0]
 
+karthik_image = face_recogniton.load_image_file("static/traning_images/karthik/karthk.jpg")
+karthik_face_encoding = face_recognition.face_encodings(karthik_image)[0]
+
 known_face_encodings = [
     aneesh_face_encoding,
     aneesh_face_encoding
 ]
 known_face_names = [
     "Aneesh",
-    "Archana"
+    "Archana",
+    "Rohan",
+    "Karthik"
 ]
 
 face_locations = []
